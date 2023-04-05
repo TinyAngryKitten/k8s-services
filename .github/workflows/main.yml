@@ -16,7 +16,7 @@ jobs:
       - name: docker login
         run: docker login --username tinyangrykitten --password ${{ secrets.DOCKER_TOKEN }}
       - name: Build project
-        run: sh buildAndPublish.sh
+        run: sh buildAndPush.sh
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
