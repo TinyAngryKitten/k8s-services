@@ -1,0 +1,17 @@
+name: "Main - PR Label Checker"
+
+on: push
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    name: "Build and push image"
+    steps:
+      - name: GitHub Action for GraalVM
+        uses: graalvm/setup-graalvm@v1
+        with:
+          java-version: 17
+      - name: docker login
+      - run: docker login -u tinyangrykitten
+      - name: Build project
+        run: sh buildAndPublish.sh
