@@ -12,6 +12,11 @@ jobs:
         with:
           java-version: 17
       - name: docker login
-      - run: docker login -u tinyangrykitten
+      - run: docker login --username tinyangrykitten --password $DOCKER_TOKEN
       - name: Build project
         run: sh buildAndPublish.sh
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: apply -f build/kubernetes/kubernetes.yml

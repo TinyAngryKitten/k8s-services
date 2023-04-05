@@ -1,5 +1,5 @@
-imagename=tinyangrykitten/:latest
-./mvnw package
+imagename=tinyangrykitten/template:latest
+./gradlew build -Dquarkus.package.type=native
 
-docker build -f src/main/docker/Dockerfile.jvm -t $imagename --platform linux/amd64 .
+docker build -f src/main/docker/Dockerfile.native-micro -t $imagename --platform linux/amd64 .
 docker push $imagename
