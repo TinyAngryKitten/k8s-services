@@ -12,7 +12,7 @@ jobs:
         with:
           java-version: 17
       - name: docker login
-      - run: docker login --username tinyangrykitten --password $DOCKER_TOKEN
+        run: docker login --username tinyangrykitten --password $DOCKER_TOKEN
       - name: Build project
         run: sh buildAndPublish.sh
       - uses: actions-hub/kubectl@master
