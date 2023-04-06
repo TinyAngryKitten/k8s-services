@@ -15,6 +15,7 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+    implementation("org.eclipse.paho:org.eclipse.paho.mqttv5.client:1.2.5")
     implementation("io.quarkus:quarkus-kubernetes")
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-kubernetes-config")
