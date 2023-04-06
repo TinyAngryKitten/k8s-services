@@ -3,8 +3,8 @@ name: "Main - PR Label Checker"
 on:
   push:
     branches:
-      - '**'
-      - !main
+      - "**"
+      - "!main"
 
 jobs:
   build_and_push:
