@@ -1,6 +1,10 @@
 name: "Main - PR Label Checker"
 
-on: push
+on:
+  push:
+    branches:
+      - '**'
+      - !main
 
 jobs:
   build_and_push:
